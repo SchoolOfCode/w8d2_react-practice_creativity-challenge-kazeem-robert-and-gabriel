@@ -1,3 +1,7 @@
 #highpriority {
   background-color: red;
 }
+
+#standardpriority {
+  background-color: green;
+}

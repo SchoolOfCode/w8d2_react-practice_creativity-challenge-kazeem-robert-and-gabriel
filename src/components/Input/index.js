@@ -17,7 +17,9 @@ function Input({ onSubmitClick }) {
   return (
     <form>
       <input onChange={handleChange} />
-      <button onClick={handleSubmit} value={text}>
+      <button 
+      id="standardpriority"
+      onClick={handleSubmit} value={text}>
         Submit Standard Priority Task
       </button>
       <button
