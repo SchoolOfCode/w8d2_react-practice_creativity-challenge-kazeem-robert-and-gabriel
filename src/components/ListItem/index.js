@@ -1,13 +1,20 @@
 import React from "react";
+import "./index.css"
 
-function ListItem({ text, priorityText, onDeleteClick }) {
+function ListItem({ text, pr, onDeleteClick }) {
+  console.log(pr);
   return (
     <li>
-      {text}
-      {priorityText}
-      <button id="done" onClick={onDeleteClick}>
-        Done ✔️
-      </button>
+      <div className="li">
+        <main><div className="todo">{text}</div>
+        <div className="priority"> {pr}</div>
+        </main>
+        <div className="button-sect">
+          <button id="done" onClick={onDeleteClick} className="button">
+            Done ✔️
+          </button>
+        </div>
+      </div>
     </li>
   );
 }

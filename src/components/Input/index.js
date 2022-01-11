@@ -1,37 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./index.css";
 
 function Input({ onSubmitClick }) {
   const [text, setText] = useState("");
-  const [priorityText, setPriorityText] = useState("");
+  const [priority, setPriority] = useState();
 
   function handleChange(event) {
     setText(event.target.value);
-    setPriorityText(event.target.value);
   }
 
   function handleSubmit(event) {
     // Stop the page from refreshing as the form will try and submit and refresh by default
     event.preventDefault();
-    onSubmitClick(text);
+    onSubmitClick(text,priority);
   }
 
-  // useEffect(()=>{
-
-  // }[priorityText])
-
-  function toUpperCase(text) {
-    return text.toUpperCase();
+  function handlePriority(e) {
+    setPriority(e.target.value);
   }
+
+
 
   return (
     <form>
       <input onChange={handleChange} />
-      <button id="standardpriority" onClick={handleSubmit} value={text}>
+      <select onChange={handlePriority}>
+        <option>Priority</option>
+        <option value="priority 1">1</option>
+        <option value="priority 2">2</option>
+        <option value="priority 3">3</option>
+        <option value="priority 4">4</option>
+        <option value="priority 5">5</option>
+      </select>
+      <button onClick={handleSubmit} value={text}>
         ➕Submit Standard Priority Task
-      </button>
-      <button id="highpriority" onClick={handleSubmit} value={priorityText}>
-        ➕➕Submit High Priority Task
       </button>
     </form>
   );
