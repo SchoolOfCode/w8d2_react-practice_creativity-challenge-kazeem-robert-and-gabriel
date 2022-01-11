@@ -2,7 +2,6 @@ import "./index.css";
 import { useState } from "react";
 import List from "../List/index.js";
 import Input from "../Input";
-import Quote from "../Quote/index.js";
 
 function App() {
   const [todos, setTodos] = useState([]);
