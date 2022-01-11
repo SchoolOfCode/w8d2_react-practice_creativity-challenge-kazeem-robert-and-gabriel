@@ -4,7 +4,9 @@ function ListItem({ text, onDeleteClick }) {
   return (
     <li>
       {text}
-      <button onClick={onDeleteClick}>X</button>
+      <button 
+      id="done"
+      onClick={onDeleteClick}>Done ✔️</button>
     </li>
   );
 }

@@ -24,14 +24,14 @@ function Input({ onSubmitClick }) {
       <button 
       id="standardpriority"
       onClick={handleSubmit} value={text}>
-        Submit Standard Priority Task
+        ➕Submit Standard Priority Task
       </button>
       <button
         id="highpriority"
         onClick={handleSubmit}
         value={text.toUpperCase()}
       >
-        Submit High Priority Task
+        ➕➕Submit High Priority Task
       </button>
     </form>
   );
