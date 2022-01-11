@@ -3,9 +3,11 @@ import "./index.css";
 
 function Input({ onSubmitClick }) {
   const [text, setText] = useState("");
+  const [priorityText, setPriorityText] = useState("");
 
   function handleChange(event) {
     setText(event.target.value);
+    setPriorityText(event.target.value);
   }
 
   function handleSubmit(event) {
@@ -14,6 +16,10 @@ function Input({ onSubmitClick }) {
     onSubmitClick(text);
   }
 
+  // useEffect(()=>{
+
+  // }[priorityText])
+
   function toUpperCase(text) {
     return text.toUpperCase();
   }
@@ -21,16 +27,10 @@ function Input({ onSubmitClick }) {
   return (
     <form>
       <input onChange={handleChange} />
-      <button 
-      id="standardpriority"
-      onClick={handleSubmit} value={text}>
+      <button id="standardpriority" onClick={handleSubmit} value={text}>
         ➕Submit Standard Priority Task
       </button>
-      <button
-        id="highpriority"
-        onClick={handleSubmit}
-        value={text.toUpperCase()}
-      >
+      <button id="highpriority" onClick={handleSubmit} value={priorityText}>
         ➕➕Submit High Priority Task
       </button>
     </form>

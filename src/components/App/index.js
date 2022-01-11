@@ -2,6 +2,7 @@ import "./index.css";
 import { useState, useEffect } from "react";
 import List from "../List/index.js";
 import Input from "../Input";
+import Quote from "../Quote/index.js";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Input onSubmitClick={addItem} />
+      <Quote />
       <List items={todos} onItemDeleteClick={removeItem} />
     </div>
   );

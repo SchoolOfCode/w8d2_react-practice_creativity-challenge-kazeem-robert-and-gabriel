@@ -1,12 +1,13 @@
 import React from "react";
 
-function ListItem({ text, onDeleteClick }) {
+function ListItem({ text, priorityText, onDeleteClick }) {
   return (
     <li>
       {text}
-      <button 
-      id="done"
-      onClick={onDeleteClick}>Done ✔️</button>
+      {priorityText}
+      <button id="done" onClick={onDeleteClick}>
+        Done ✔️
+      </button>
     </li>
   );
 }
