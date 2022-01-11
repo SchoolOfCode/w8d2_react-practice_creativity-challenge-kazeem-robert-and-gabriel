@@ -6,18 +6,15 @@ import Quote from "../Quote/index.js";
 
 function App() {
   const [todos, setTodos] = useState([]);
- 
 
-  function addItem(item,text) {
+  function addItem(item, text) {
     // Don't add the item if there is already one the same that exists
-    // if (todos.includes(item)) {
-    //   return;
-    // }
-    setTodos([{todo:item,text:text},...todos])
-    console.log(item,text, todos)
-    
+    if (todos.includes(item)) {
+      return;
+    }
+    setTodos([{ todo: item, text: text }, ...todos]);
+    console.log(item, text, todos);
   }
-
 
   function removeItem(index) {
     setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
@@ -26,11 +23,8 @@ function App() {
   return (
     <div className="App">
       <Input onSubmitClick={addItem} />
-      <Quote />
-      <List
-        items={todos}
-        onItemDeleteClick={removeItem}
-      />
+
+      <List items={todos} onItemDeleteClick={removeItem} />
     </div>
   );
 }
