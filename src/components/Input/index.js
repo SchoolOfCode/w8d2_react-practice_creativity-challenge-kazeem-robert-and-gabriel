@@ -14,6 +14,10 @@ function Input({ onSubmitClick }) {
     onSubmitClick(text);
   }
 
+  function toUpperCase(text) {
+    return text.toUpperCase();
+  }
+
   return (
     <form>
       <input onChange={handleChange} />
